@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST SESSIÓN STORAGE</title>
+
+    <!-- 🌙 CONTROL DEL TEMA ANTES DE CARGAR -->
+    <script>
+        const temaGuardado = localStorage.getItem('tema');
+
+        if (
+            temaGuardado === 'dark' ||
+            (!temaGuardado && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body id="app" class="min-h-screen transition-colors duration-300 bg-emerald-300 dark:bg-slate-900">
+
+<!-- ================= HEADER (ORIGINAL RESTAURADO) ================= -->
+<header class="w-[300px] mx-auto mt-3 mb-10 p-[1px] rounded-[2rem] 
+bg-gradient-to-r from-teal-400 via-indigo-500 to-blue-500 
+shadow-[0_0_10px_rgba(99,102,241,0.3)] 
+sm:w-[600px] sm:p-[4px] 
+md:w-[700px] md:p-[6px] 
+lg:w-[1000px] lg:p-[6px] 
+xl:w-[1260px] xl:p-[6px] 
+2xl:w-[1500px] 2xl:p-[6px] 
+[@media(min-width:1920px)]:w-[1700px] 
+[@media(min-width:1920px)]:p-[8px]">
+
+    <div class="bg-[url(imagenes/retulo.jpg)] bg-[length:100%_100%] rounded-[1.8rem] pt-1 py-3 
+    sm:py-4 md:py-8 lg:py-9 xl:py-10 2xl:py-11 
+    [@media(min-width:1920px)]:py-12">
+
+        <h1 class="text-center text-xl text-indigo-900 font-bold 
+        drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)] 
+        sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+            TEST
+        </h1>
+
+    </div>
+</header>
+
+<!-- ================= GIF ================= -->
+<div>
+    <img class="mx-auto w-[70px] sm:w-[100px] md:w-[120px] lg:w-[160px] xl:w-[160px] 2xl:w-[160px]"
+         src="imagenes/interrogante.gif"
+         alt="gif"/>
+</div>
+
+<!-- ================= FORMULARIO ================= -->
+<main class="px-4">
+
+<form id="form-test">
+
+    <!-- CONTENEDOR PREGUNTAS -->
+    <div id="contenedor-pregunta"
+         class="grid grid-cols-1 justify-items-center mt-10 w-full mx-auto">
+    </div>
+
+    <!-- ================= BOTONES ================= -->
+    <div class="mt-10 mb-5 flex flex-wrap justify-center items-center gap-2">
+
+        <button id="btnAnterior" type="button"
+            class="border rounded-2xl border-teal-600 px-4 py-2 cursor-pointer 
+            bg-gradient-to-r from-teal-400 via-indigo-500 to-blue-500 
+            text-white font-bold border-4
+            transition-all duration-300 hover:scale-105 active:scale-95">
+            ANTERIOR
+        </button>
+
+        <button id="btnVerificar" type="button"
+            class="border rounded-2xl border-teal-600 px-4 py-2 cursor-pointer 
+            bg-gradient-to-r from-teal-400 via-indigo-500 to-blue-500 
+            text-white font-bold border-4
+            border-emerald-300
+            transition-all duration-300 hover:scale-105 active:scale-95">
+            VERIFICAR
+        </button>
+
+        <button id="btnSiguiente" type="button"
+            class="border rounded-2xl border-teal-600 px-4 py-2 cursor-pointer
+            bg-gradient-to-r from-teal-400 via-indigo-500 to-blue-500 
+            text-white font-bold border-4 
+            transition-all duration-300 hover:scale-105 active:scale-95">
+            SIGUIENTE
+        </button>
+
+        <button id="btnFinalizar" type="button"
+            class="border rounded-2xl border-teal-600 px-4 py-2 cursor-pointer
+            bg-gradient-to-r from-red-500 to-orange-500 
+            text-white font-bold border-4 
+            transition-all duration-300 hover:scale-105 active:scale-95">
+            FINALIZAR
+        </button>
+
+        <button id="btnReiniciar" type="button"
+            class="border rounded-2xl border-teal-600 px-4 py-2 cursor-pointer
+            bg-gray-600 text-white font-bold border-4 
+            transition-all duration-300 hover:scale-105 active:scale-95">
+            REINICIAR
+        </button>
+
+        <!-- 🌙 DARK/LIGHT -->
+        <button id="darklight"
+            class="flex items-center justify-center gap-2 border rounded-2xl border-teal-600 
+            px-4 py-2 cursor-pointer 
+            bg-gradient-to-r from-slate-700 to-slate-900 
+            text-white font-bold border-4 
+            transition-all duration-300 hover:scale-105 active:scale-95"
+            type="button">
+            DARK / LIGHT 🌓
+        </button>
+
+    </div>
+
+</form>
+
+</main>
+
+<!-- ================= JS ================= -->
+<script src="js/class-test.js"></script>
+<script src="js/dato-test.js"></script>
+<script src="js/test.js"></script>
+
+</body>
+</html>
